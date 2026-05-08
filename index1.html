@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Flipkart</title>
+
+<style>
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+    font-family:Arial;
+    background:#f5f5f5;
+}
+
+button{
+    padding:16px 28px;
+    font-size:18px;
+    border:none;
+    border-radius:12px;
+    background:#2874f0;
+    color:white;
+}
+</style>
+</head>
+
+<body>
+
+<button id="openBtn">
+Open in Flipkart App
+</button>
+
+<script>
+document.getElementById("openBtn").onclick = function() {
+
+    // Open Flipkart app homepage
+    window.location =
+    "intent://#Intent;package=com.flipkart.android;scheme=flipkart;end";
+
+    // Fallback to product page
+    setTimeout(function() {
+
+        window.location.href =
+        "https://www.flipkart.com/search?q=X9X&marketplace=FLIPKART";
+
+    },1500);
+};
+</script>
+
+</body>
+</html>
